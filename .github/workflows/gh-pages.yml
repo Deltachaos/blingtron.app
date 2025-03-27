@@ -21,6 +21,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
           repository: Deltachaos/blingtronapp-frontend
       
       - name: Setup Node.js
