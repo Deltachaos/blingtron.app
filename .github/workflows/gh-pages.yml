@@ -22,7 +22,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Deltachaos/blingtronapp-frontend
-          path: source
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,18 +31,16 @@ jobs:
       
       - name: Install dependencies
         run: |
-          cd source
           npm install
       
       - name: Build project
         run: |
-          cd source
           npm run build
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: source/dist
+          path: dist
   
   deploy:
     environment:
