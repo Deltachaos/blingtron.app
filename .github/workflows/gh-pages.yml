@@ -3,8 +3,9 @@ name: Deploy Vue.js to GitHub Pages
 on:
   push:
     branches: ["main"]
-  workflow_dispatch:
-
+  repository_dispatch:
+    types: [ci_trigger]
+    
 permissions:
   contents: read
   pages: write
